@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Create Subscription</h2>
+    <form id="subscriptionForm">
+        <div class="form-group">
+            <label for="patient">Patient</label>
+            <select class="form-control" id="patient" name="patient">
+                {% for patient in patients %}
+                    <option value="{{ patient.id }}">{{ patient.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="subscriptionType">Subscription Type</label>
+            <select class="form-control" id="subscriptionType" name="subscriptionType">
+                <option value="monthly">Monthly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit">Create Subscription</button>
+    </form>
+</div>
+{% endblock %}
