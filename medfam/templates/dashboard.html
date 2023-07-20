@@ -1,0 +1,27 @@
+```html
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to your dashboard, {{ current_user.username }}</h1>
+    <p>This is your personal dashboard. Here you can manage your patients and subscriptions.</p>
+
+    <div class="dashboard-section">
+        <h2>Your Patients</h2>
+        <!-- Patient list will be populated here -->
+    </div>
+
+    <div class="dashboard-section">
+        <h2>Your Subscriptions</h2>
+        <!-- Subscription list will be populated here -->
+    </div>
+
+    <div class="dashboard-section">
+        <h2>Create a new subscription</h2>
+        <form action="{{ url_for('create_subscription') }}" method="post">
+            <!-- Subscription form will be populated here -->
+        </form>
+    </div>
+</div>
+{% endblock %}
+```
